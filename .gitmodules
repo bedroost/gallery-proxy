@@ -1,0 +1,6 @@
+[submodule "booking"]
+	path = booking
+	url = https://github.com/bedroost/booking.git
+[submodule "review"]
+	path = review
+	url = https://github.com/bedroost/review.git
