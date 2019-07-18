@@ -9,7 +9,7 @@ app.use('/rooms/:listingid', express.static(path.join(__dirname)));
 
 app.get('/api/:listingid/images', (req, res) => {
   axios.get(`http://ec2-54-215-150-88.us-west-1.compute.amazonaws.com/api/${req.params.listingid}/images`)
-    .then((response)=> {
+    .then((response) => {
       res.send(response.data);
     });
 });
@@ -23,9 +23,23 @@ app.get('/api/:listingid/reviews', (req, res) => {
 
 app.get('/api/:listingid/booking', (req, res) => {
   axios.get(`http://ec2-13-52-61-34.us-west-1.compute.amazonaws.com/api/${req.params.listingid}/booking`)
-    .then((response)=> {
+    .then((response) => {
       res.send(response.data);
     });
 });
+
+app.get('/listing/desc/:listingid', (req, res) => {
+  axios.get(`http://18.221.218.103/listing/desc/${req.params.listingid}`)
+    .then((response) => {
+      res.send(response.data)
+    })
+});
+
+app.get('/listing/amenity/:listingid', (req, res) => {
+  axios.get(`http://18.221.218.103/listing/amenity/${req.params.listingid}`)
+    .then((response) => {
+      res.send(response.data)
+    })
+})
 
 app.listen(port, () => { console.log(`Listening on port ${port}`); });
