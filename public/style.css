@@ -3,10 +3,18 @@
   width: 100vw;
 }
 
-/* .BookingForm {
-  width: 158vw;
-} */
+#booking-component {
+  margin-left: 60%;
+  position: sticky;
+  top: 4em;
+  margin-top: 2%;
+}
 
-/* #below-gallery div {
+#review-component {
+  margin-left: 6%;
+}
 
-} */
+#description-component {
+  max-width: 700px;
+  margin-left: 80px;
+}

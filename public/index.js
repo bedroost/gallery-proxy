@@ -1,9 +1,21 @@
+const compression = require('compression')
 const express = require('express');
 const app = express();
 const path = require('path');
 const axios = require('axios');
 
 const port = process.env.PORT || 3000;
+
+app.use(compression({ filter: shouldCompress }));
+
+function shouldCompress (req, res) {
+  if (req.headers['x-no-compression']) {
+    // don't compress responses with this request header
+    return false
+  }
+  // fallback to standard filter function
+  return compression.filter(req, res)
+}
 
 app.use('/rooms/:listingid', express.static(path.join(__dirname)));
 
