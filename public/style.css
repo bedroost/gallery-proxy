@@ -1,0 +1,20 @@
+#gallery-component {
+  display: flex;
+  width: 100vw;
+}
+
+#booking-component {
+  margin-left: 60%;
+  position: sticky;
+  top: 4em;
+  margin-top: 2%;
+}
+
+#review-component {
+  margin-left: 6%;
+}
+
+#description-component {
+  max-width: 700px;
+  margin-left: 80px;
+}
